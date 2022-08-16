@@ -1,0 +1,273 @@
+:root {
+    --purple: #6f42c1;
+    --clr-text-high: hsla(0, 0%, 0%, 0.87);
+    --clr-text-high-fallback: #212121;
+    --clr-text-high-fallback-2: #000000de;
+    --clr-text-med: hsla(0, 0%, 0%, 0.6);
+    --clr-text-med-fallback: #666666;
+    --clr-text-med-fallback-2: #0009;
+    --clr-text-low: hsla(0, 0%, 0%, 0.38);
+    --clr-text-low-fallback: #9e9e9e;
+    --clr-text-low-fallback-2: #00000061;
+    --mdc-elevation-z1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z2: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z3: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z4: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z6: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z8: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z12: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z16: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+    --mdc-elevation-z24: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --mdc-transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--clr-text-high, var(--clr-text-high-fallback));
+    text-align: left;
+    background-color: #fff;
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* Divi */
+body, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.et_pb_row {
+    width: 90%;
+}
+
+img,
+.img-fluid {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.test {
+    width: 300px;
+    height: 250px;
+    box-shadow: var(--mdc-elevation-z1);
+    transition: var(--mdc-elevation-transition);
+}
+
+.test:hover {
+    box-shadow: var(--mdc-elevation-z8);
+}
+
+.btn-primary {
+    width: 200px;
+    height: 80px;
+    background-color: orange;
+    box-shadow: var(--mdc-elevation-z2);
+    transition: var(--mdc-elevation-transition);
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: orange;
+    box-shadow: var(--mdc-elevation-z8);
+    border: 0;
+}
+
+.zp-section,
+.zp-row {
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+}
+
+.zp-section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.zp-row {
+    display: flex;
+    width: 90%;
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    justify-content: center;
+}
+
+.zp-col {
+    position: relative;
+    z-index: 2;
+    min-height: 1px;
+    -ms-flex-order: 1;
+    order: 1;
+    flex: 0 0 auto;
+}
+
+.zp-col-1 {
+    width: 8.33333333%;
+}
+
+.zp-col-2 {
+    width: 16.66666667%;
+}
+
+.zp-col-3 {
+    width: 25%;
+}
+
+.zp-col-4 {
+    width: 33.33333333%;
+}
+
+.zp-col-5 {
+    width: 41.66666667%;
+}
+
+.zp-col-6 {
+    width: 50%;
+}
+
+.zp-col-7 {
+    width: 58.33333333%;
+}
+
+.zp-col-8 {
+    width: 66.66666667%;
+}
+
+.zp-col-9 {
+    width: 75%;
+}
+
+.zp-col-10 {
+    width: 83.33333333%;
+}
+
+.zp-col-11 {
+    width: 91.66666667%;
+}
+
+.zp-col-12 {
+    width: 100%;
+}
+
+header {
+    display: none;
+}
+
+.ltd-text {
+	font-size: 50px;
+	font-weight: 900;
+    color: red;
+    text-align: center;
+    display: none;
+    user-select: none;
+}
+
+.ltd-text.locked {
+    color: green;
+}
+
+.ltd-text.active {
+    display: block;
+}
+
+/* MEDIA QUERIES DESKTOP-FIRST
+ * ==================================== */
+
+/* Extra large devices (desktops, less than 1400px) */
+@media (max-width : 1399px) {}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width : 1199px) {}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width : 980px) {}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width : 767px) {}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width : 575px) {}
+
+/* Extra Small Devices, Phones */
+@media (max-width : 480px) {}
+
+/* Custom, iPhone Retina */
+@media (max-width : 320px) {}
+
+
+/* Media Queries Mobile-First
+ * ==================================== */
+
+/* Custom, iPhone Retina */
+@media (min-width : 360px) {}
+
+/* Extra Small Devices, Phones */
+@media (min-width : 481px) {}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width : 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width : 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width : 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width : 1200px) {}
+
+/* Extra large devices (large desktops, 1400px and up) */
+@media (min-width : 1400px) {
+
+    .container {
+        max-width: 1320px;
+    }
+}

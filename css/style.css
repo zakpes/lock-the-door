@@ -198,24 +198,51 @@ button:focus {
 }
 
 header {
-    display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
 }
 
 .ltd-text {
 	font-size: 50px;
 	font-weight: 900;
-    color: red;
+    color: #F44336;
     text-align: center;
     display: none;
     user-select: none;
+    font-family: "Noto Sans";
 }
 
 .ltd-text.locked {
-    color: green;
+    color: #388E3C;
 }
 
-.ltd-text.active {
+.ltd-mode-btn {
+	background: transparent;
+	outline: none;
+	border: none;
+}
+
+.ltd-mode-btn:focus {
+	outline: none;
+}
+
+.ltd-mode {
+    display: none;
+}
+
+.ltd-text.active,
+.ltd-mode.active {
     display: block;
+}
+
+/* dark mode */
+.dark-mode .zp-section {
+    background: #202124;
 }
 
 /* MEDIA QUERIES DESKTOP-FIRST

@@ -10,6 +10,10 @@
     const darkModeBtn = document.querySelector("#js-darkModeBtn");
     const lightModeBtn = document.querySelector("#js-lightModeBtn");
 
+    const confirmationModal = document.querySelector("#js-ltdConfirmationModal");
+    const confirmationModalBtnYes = document.querySelector("#js-ltdCmBtnYes");
+    const confirmationModalBtnNo = document.querySelector("#js-ltdCmBtnNo");
+
     modeBtn.addEventListener("click", function() {
         toggleDarkMode();
         setLocalStorage("Dark mode", "active", "inactive");
@@ -46,7 +50,6 @@
         if (tapDisabled) return;
 
         if (doorIsLocked) {
-            // confirm("Is the door unlocked?");
             locked.classList.toggle("active");
             unlocked.classList.toggle("active");
             tapDisabled = true;
@@ -57,17 +60,25 @@
                 tapDisabled = false;
             }, 1000);
         } else {
-            // confirm("Is the door locked?");
-            alert("Make sure the door is locked!")
-            locked.classList.toggle("active");
-            unlocked.classList.toggle("active");
-            tapDisabled = true;
-            doorIsLocked = true;
-            setLocalStorage("Door is locked", "locked", "unlocked");
+            confirmationModal.classList.add("active");
+
+            confirmationModalBtnYes.addEventListener("click", function() {
+                locked.classList.toggle("active");
+                unlocked.classList.toggle("active");
+                tapDisabled = true;
+                doorIsLocked = true;
+                setLocalStorage("Door is locked", "locked", "unlocked");
+                confirmationModal.classList.remove("active");
+                
+                setTimeout(function() {
+                    tapDisabled = false;
+                }, 1000);
+            });
             
-            setTimeout(function() {
-                tapDisabled = false;
-            }, 1000);
+            confirmationModalBtnNo.addEventListener("click", function() {
+                confirmationModal.classList.remove("active");
+                return;
+            });
         }
     });
 
@@ -87,5 +98,4 @@
     function removeLocalStorage(name) {
         localStorage.removeItem(name);
     }
-
 })();

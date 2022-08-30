@@ -4,7 +4,7 @@
     const unlocked = document.querySelector("#js-ltdUnlocked");
     const locked = document.querySelector("#js-ltdLocked");
     let tapDisabled = false;
-    let doorIsLocked = false;
+    let doorIsLocked;
 
     const modeBtn = document.querySelector("#js-ltdModeBtn");
     const darkModeBtn = document.querySelector("#js-darkModeBtn");
@@ -23,13 +23,13 @@
     document.addEventListener("DOMContentLoaded", function() {
         let locStor = localStorage.getItem("Door is locked") || "";
         let locStorDarkMode = localStorage.getItem("Dark mode") || "";
-        console.log(locStor);
-        console.log({locStorDarkMode});
 
         if (locStor && locStor === "locked") {
             locked.classList.toggle("active");
             unlocked.classList.toggle("active");
             doorIsLocked = true;
+        } else {
+            doorIsLocked = false;
         }
 
         // check for dark mode
@@ -55,31 +55,35 @@
             tapDisabled = true;
             doorIsLocked = false;
             setLocalStorage("Door is locked", "locked", "unlocked");
+            console.log({doorIsLocked});
             
             setTimeout(function() {
                 tapDisabled = false;
             }, 1000);
         } else {
             confirmationModal.classList.add("active");
-
-            confirmationModalBtnYes.addEventListener("click", function() {
-                locked.classList.toggle("active");
-                unlocked.classList.toggle("active");
-                tapDisabled = true;
-                doorIsLocked = true;
-                setLocalStorage("Door is locked", "locked", "unlocked");
-                confirmationModal.classList.remove("active");
-                
-                setTimeout(function() {
-                    tapDisabled = false;
-                }, 1000);
-            });
             
-            confirmationModalBtnNo.addEventListener("click", function() {
-                confirmationModal.classList.remove("active");
-                return;
-            });
         }
+    });
+
+    // confirmation modal btns event listeners
+    confirmationModalBtnYes.addEventListener("click", function() {
+        locked.classList.toggle("active");
+        unlocked.classList.toggle("active");
+        tapDisabled = true;
+        doorIsLocked = true;
+        setLocalStorage("Door is locked", "locked", "unlocked");
+        confirmationModal.classList.remove("active");
+        console.log({doorIsLocked});
+        
+        setTimeout(function() {
+            tapDisabled = false;
+        }, 1000);
+    });
+    
+    confirmationModalBtnNo.addEventListener("click", function() {
+        confirmationModal.classList.remove("active");
+        return;
     });
 
     // set local storage
@@ -92,7 +96,7 @@
             localStorage.setItem(name, val1);
         }
         
-        console.log(localStorage.getItem(name));
+        // console.log(localStorage.getItem(name));
     }
 
     function removeLocalStorage(name) {

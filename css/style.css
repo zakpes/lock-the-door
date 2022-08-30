@@ -237,11 +237,6 @@ button:focus,
     display: block;
 }
 
-/* dark mode */
-.dark-mode .zp-section {
-    background: #202124;
-}
-
 /* confirmation modal */
 .ltd-confirmation-modal-overlay {
     position: fixed;
@@ -254,28 +249,52 @@ button:focus,
     align-items: center;
     z-index: 999;
     display: none;
+    background-color: #00000052;
+    transition: opacity 300ms ease;
+    opacity: 0;
 }
 
 .ltd-confirmation-modal-overlay.active {
     display: flex;
+    opacity: 1;
 }
 
 .ltd-cm-container {
     width: 90%;
-    background: #ececec;
-    height: 200px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    box-shadow: 0 11px 15px -7px #0003,0 24px 38px 3px #00000024,0 9px 46px 8px #0000001f;
+    box-shadow: var(--mdc-elevation-z24);
     padding: 20px;
+}
+
+.ltd-cm-text-container {
+    margin-bottom: 30px;
+}
+
+.ltd-cm-text {
+    font-size: 24px;
+    text-align: center;
 }
 
 .ltd-cm-btn {
     font-size: 18px;
-    padding: 12px 20px;
+    padding: 12px 25px;
+    background: transparent;
+    margin: 0 5px;
+    border: 2px solid #388E3C;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ltd-cm-btn.yes {
+    background: #388E3C;
+    color: #fff;
 }
 
 .animate__animated {
@@ -348,32 +367,50 @@ button:focus,
     -webkit-animation-name: slideInDown;
     animation-name: slideInDown;
 }
+
 @-webkit-keyframes zoomIn {
     from {
-      opacity: 0;
-      -webkit-transform: scale3d(0.3, 0.3, 0.3);
-      transform: scale3d(0.3, 0.3, 0.3);
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
     }
-  
+
     50% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  @keyframes zoomIn {
+}
+
+@keyframes zoomIn {
     from {
-      opacity: 0;
-      -webkit-transform: scale3d(0.3, 0.3, 0.3);
-      transform: scale3d(0.3, 0.3, 0.3);
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
     }
-  
+
     50% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  .animate__zoomIn {
+}
+
+.animate__zoomIn {
     -webkit-animation-name: zoomIn;
     animation-name: zoomIn;
-  }
+}
+
+/* dark mode */
+.dark-mode .zp-section {
+    background: #202124;
+}
+
+.dark-mode .ltd-cm-container {
+    background-color: #303134;
+}
+
+.dark-mode .ltd-cm-text,
+.dark-mode .ltd-cm-btn.no {
+    color: #fff;
+}
+
 /* MEDIA QUERIES DESKTOP-FIRST
  * ==================================== */
 

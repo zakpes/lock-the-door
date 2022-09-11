@@ -1,4 +1,6 @@
+import {notifyMe} from "./notification.js";
 (function() {
+
     const bodyEl = document.body;
     const tapSection = document.querySelector("#js-ltdTapSection");
     const unlocked = document.querySelector("#js-ltdUnlocked");
@@ -75,6 +77,7 @@
         setLocalStorage("Door is locked", "locked", "unlocked");
         confirmationModal.classList.remove("active");
         console.log({doorIsLocked});
+        notifyMe();
         
         setTimeout(function() {
             tapDisabled = false;

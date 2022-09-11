@@ -9,3 +9,4 @@
 5. Android app
 >6. Confirmation modal
 7. Material design ripple effect for btns
+8. Add ripple to btns

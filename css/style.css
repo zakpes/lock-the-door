@@ -268,7 +268,7 @@ button:focus,
     align-items: center;
     border-radius: 4px;
     box-shadow: var(--mdc-elevation-z24);
-    padding: 20px;
+    padding: 24px;
 }
 
 .ltd-cm-text-container {
@@ -276,20 +276,25 @@ button:focus,
 }
 
 .ltd-cm-text {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 32px;
     text-align: center;
+    font-weight: 500;
 }
 
 .ltd-cm-btn {
-    font-size: 18px;
-    padding: 12px 25px;
+    font-size: 14px;
+    padding: 0px 16px;
     background: transparent;
     margin: 0 5px;
-    border: 2px solid #388E3C;
+    border: 1px solid #388E3C;
     border-radius: 4px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
+    height: 36px;
+    font-family: "Noto Sans";
+    color: #388E3C;
 }
 
 .ltd-cm-btn.yes {
@@ -406,8 +411,7 @@ button:focus,
     background-color: #303134;
 }
 
-.dark-mode .ltd-cm-text,
-.dark-mode .ltd-cm-btn.no {
+.dark-mode .ltd-cm-text {
     color: #fff;
 }
 
